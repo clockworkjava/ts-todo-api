@@ -1,5 +1,4 @@
 export class ToDo {
-
     private description: string;
     private done: boolean;
 
@@ -8,15 +7,15 @@ export class ToDo {
         this.done = false;
     }
 
-    public isDone() : boolean {
+    public isDone(): boolean {
         return this.done;
     }
 
-    public complete() : void {
+    public complete(): void {
         this.done = true;
     }
 
-    public static isToDoData(arg: any): arg is {description: string, done?: boolean } {
+    public static isToDoData(arg: any): arg is { description: string; done?: boolean } {
         return arg.description !== undefined;
     }
 }
