@@ -1,8 +1,25 @@
 import { ToDo } from "./ToDo";
 
-test("basic", () => {
-    const x: ToDo = new ToDo("new one");
-    expect(x.isDone()).toBeFalsy();
-    x.complete();
-    expect(x.isDone()).toBeTruthy();
+describe("App tests", () => {
+    describe("ToDo", () => {
+        let x: ToDo;
+
+        beforeEach(() => {
+            x = new ToDo("new one");
+        });
+
+        afterAll(() => {
+            console.log("Done");
+        });
+
+        test("New item should not be completed", () => {
+            expect(x.isDone()).toBe(false);
+        });
+
+        test("Done item should be completed", () => {
+            x.complete();
+            expect(x.isDone()).toBe(true);
+        });
+    });
 });
+//TS 3.5.3!!!
